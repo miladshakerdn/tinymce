@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+</head>
+
+<body dir="rtl">
+<center>
+<div style="max-width:600px; text-align:right" dir="rtl"> 
+<form action="" id="quickForm" method="POST">
+<label>متن</label>
+<textarea name="editor1" id="editor1"></textarea>
+<button type="submit" class="btn btn-success">ثبت</button>
+</form>
+</div>
+
+</body>
+
+
+<script src="jquery.min.js"></script>
+<script src="tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+    jQuery().ready(function($){
+        tinymce.init({
+          selector: '#editor1',
+          language: 'fa_IR',
+          directionality : 'rtl',
+          height: 350,
+          plugins: [
+              'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+              'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+              'save table contextmenu directionality emoticons template paste textcolor'
+          ],
+          toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
+          save_enablewhendirty: true,
+          save_onsavecallback: function () { alert(myTextarea.value); }
+      });
+      });
+</script>
+</html>
