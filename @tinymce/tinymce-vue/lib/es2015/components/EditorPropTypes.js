@@ -6,6 +6,7 @@
  *
  */
 export var editorProps = {
+    scriptPath: String,
     apiKey: String,
     cloudChannel: String,
     id: String,

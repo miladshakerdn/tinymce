@@ -9,6 +9,7 @@ export declare type CopyProps<T> = {
     [P in keyof T]: any;
 };
 export interface IPropTypes {
+    scriptPath: string;
     apiKey: string;
     cloudChannel: string;
     id: string;

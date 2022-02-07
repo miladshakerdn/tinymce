@@ -8,6 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.editorProps = {
+    scriptPath: String,
     apiKey: String,
     cloudChannel: String,
     id: String,

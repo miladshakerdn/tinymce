@@ -65,8 +65,10 @@ export var Editor = {
             var doc = this.element.ownerDocument;
             var channel = this.$props.cloudChannel ? this.$props.cloudChannel : '5';
             var apiKey = this.$props.apiKey ? this.$props.apiKey : 'no-api-key';
-            alert("sss://cdn.tiny.cloud/1/" + apiKey + "/tinymce/" + channel + "/tinymce.min.js");
-            ScriptLoader.load(scriptState, doc, "http://127.0.0.1:8091/tinymce/tinymce.min.js", initialise(this));
+            var nopath = "https://cdn.tiny.cloud/1/" + apiKey + "/tinymce/" + channel + "/tinymce.min.js";
+            var scriptPath = this.$props.scriptPath ? this.$props.scriptPath : nopath;
+            /* alert("sss://cdn.tiny.cloud/1/" + apiKey + "/tinymce/" + channel + "/tinymce.min.js"); */
+            ScriptLoader.load(scriptState, doc, scriptPath, initialise(this));
         }
     },
     beforeDestroy: function () {

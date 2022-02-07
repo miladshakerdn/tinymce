@@ -286,8 +286,9 @@ var Editor = (function () {
                 var doc = this.element.ownerDocument;
                 var channel = this.$props.cloudChannel ? this.$props.cloudChannel : '5';
                 var apiKey = this.$props.apiKey ? this.$props.apiKey : 'no-api-key';
-                alert("https://cdn.tiny.cloud/1/" + apiKey + "/tinymce/" + channel + "/tinymce.min.js");
-                load(scriptState, doc, "https://cdn.tiny.cloud/1/" + apiKey + "/tinymce/" + channel + "/tinymce.min.js", initialise(this));
+                var nopath = "https://cdn.tiny.cloud/1/" + apiKey + "/tinymce/" + channel + "/tinymce.min.js";
+                var scriptPath = this.$props.scriptPath ? this.$props.scriptPath : nopath;
+                ScriptLoader.load(scriptState, doc, scriptPath, initialise(this));
             }
         },
         beforeDestroy: function () {
